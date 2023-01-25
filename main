@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <title>Document</title>
+<style>
+  	body{
+  		font-size : 20px;
+    }
+	#button999{
+		background-color: yellow;
+	}
+</style>
+<script type="text/javascript">
+  	var a
+
+    window.onmessage = function(event){
+  		if(event.data){
+            a = event.data;
+            document.getElementById("textreceived").innerHTML=a;
+        }
+    };
+   function send(){
+ window.parent.postMessage('hello',"https://zheyuwang1999.editorx.io/my-site-2");
+   };
+	function add(a,b){
+      return a+b
+    };
+</script>
+
+</head>
+<body>
+  	<h1>Data in Iframe</h1>
+    <input type="text" class="input" id="datasent" value="please enter...">
+  	<br>
+  	<br>
+    <button id="button999" onclick="send()">Send Data</button>
+  	<br>
+  	<br>
+  	<span>Received data is: </span>
+  	<span id="textreceived"></span>
+  	<div id="lineplot"></div>
+  	<div id="lineplot1"></div>
+</body>
+</html>
+
+
